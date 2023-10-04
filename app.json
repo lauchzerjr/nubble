@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "nubble",
+    "slug": "nubble",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
