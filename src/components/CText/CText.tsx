@@ -1,7 +1,12 @@
 import React from "react";
-import { StyleSheet, Text, TextProps, TextStyle } from "react-native";
+import { Text, TextProps, TextStyle } from "react-native";
+import { createText } from "@shopify/restyle";
+import { ThemeProps } from "../../theme/theme";
 
-interface CTextProps extends TextProps {
+const SRText = createText<ThemeProps>();
+type SRTextProps = React.ComponentProps<typeof SRText>;
+
+interface CTextProps extends SRTextProps {
   preset?: TextVariants;
   presetFont?: VariantsFontFamily;
 }
@@ -11,15 +16,15 @@ export function CText({
   preset = "paragraphMedium",
   presetFont = "regular",
   style,
-  ...rest
+  ...sRTextProps
 }: CTextProps) {
   return (
-    <Text
+    <SRText
       style={[$fontSizes[preset], $fontFamily[presetFont], style]}
-      {...rest}
+      {...sRTextProps}
     >
       {children}
-    </Text>
+    </SRText>
   );
 }
 

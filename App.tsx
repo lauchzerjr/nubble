@@ -16,6 +16,10 @@ import {
 import * as SplashScreen from "expo-splash-screen";
 
 import { CText } from "./src/components/CText/CText";
+import { CButton } from "./src/components/CButton/CButton";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { ThemeProvider } from "@shopify/restyle";
+import { theme } from "./src/theme/theme";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -44,24 +48,30 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container} onLayout={onLayoutRootView}>
-      <CText
-        style={{ color: "red", fontSize: 25}}
-        preset="headingLarge"
-        presetFont="bold"
-      >
-        AQUIIII
-      </CText>
-      <Text style={{ color: "red", fontSize: 25}}>AQUIII</Text>
-    </View>
+    <ThemeProvider theme={theme}>
+      <SafeAreaView>
+        <View style={styles.container} onLayout={onLayoutRootView}>
+          <CText
+            style={{ color: "red", fontSize: 25 }}
+            preset="headingLarge"
+            presetFont="bold"
+          >
+            AQUIIII
+          </CText>
+          <CButton title="Entrar" />
+          <CButton preset="outline" title="outline" />
+          <CButton disabled loading preset="primary" title="loading" />
+          <CButton disabled loading preset="outline" title="loading" />
+        </View>
+      </SafeAreaView>
+    </ThemeProvider>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
+    paddingHorizontal: 24,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
   },
 });
