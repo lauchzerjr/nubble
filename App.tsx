@@ -20,6 +20,7 @@ import { CButton } from "./src/components/CButton/CButton";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { ThemeProvider } from "@shopify/restyle";
 import { theme } from "./src/theme/theme";
+import { CIcon } from "./src/components/CIcon/CIcon";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -50,28 +51,13 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <SafeAreaView>
-        <View style={styles.container} onLayout={onLayoutRootView}>
-          <CText
-            style={{ color: "red", fontSize: 25 }}
-            preset="headingLarge"
-            presetFont="bold"
-          >
-            AQUIIII
-          </CText>
-          <CButton title="Entrar" />
-          <CButton preset="outline" title="outline" />
-          <CButton disabled loading preset="primary" title="loading" />
-          <CButton disabled loading preset="outline" title="loading" />
+        <View style={{paddingHorizontal: 24}} onLayout={onLayoutRootView}>
+          <CText mb="s8" preset="headingLarge" presetFont="bold">Olá</CText>
+          <CText mb="s40" preset="paragraphLarge" presetFont="medium">Digite seu e-mail e sena para entrar</CText>
+          
+          
         </View>
       </SafeAreaView>
     </ThemeProvider>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    // flex: 1,
-    paddingHorizontal: 24,
-    backgroundColor: "#fff",
-  },
-});
