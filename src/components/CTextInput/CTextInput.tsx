@@ -1,5 +1,5 @@
 import { Pressable, TextInput, TextInputProps, TextStyle } from "react-native";
-import { Box, BoxProps } from "../CBox/CBox";
+import { CBox, BoxProps } from "../CBox/CBox";
 import { $fontFamily, $fontSizes, CText } from "../CText/CText";
 import { useApptheme } from "../../hooks/useAppTheme";
 import React from "react";
@@ -33,12 +33,12 @@ export function CTextInput({
   };
 
   return (
-    <Box {...boxProps}>
+    <CBox {...boxProps}>
       <Pressable onPress={focusInput}>
         <CText preset="paragraphMedium" mb="s4">
           {label}
         </CText>
-        <Box {...$textInputContainer}>
+        <CBox {...$textInputContainer}>
           <TextInput
             ref={inputRef}
             placeholderTextColor={colors.gray2}
@@ -46,18 +46,18 @@ export function CTextInput({
             {...textInputProps}
           />
           {iconRight && (
-            <Box justifyContent="center" ml="s16">
+            <CBox justifyContent="center" ml="s16">
               {iconRight}
-            </Box>
+            </CBox>
           )}
-        </Box>
+        </CBox>
         {errorMessage && (
           <CText preset="paragraphSmall" presetFont="bold" color="error">
             {errorMessage}
           </CText>
         )}
       </Pressable>
-    </Box>
+    </CBox>
   );
 }
 
