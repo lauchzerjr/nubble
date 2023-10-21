@@ -1,7 +1,7 @@
 import React from 'react';
 import {Pressable} from 'react-native';
 
-import { useApptheme } from '../../hooks/useAppTheme';
+import { useAppTheme } from '../../hooks/useAppTheme';
 import { ThemeColorsProps } from '../../theme/theme';
 
 import {ArrowLeftIcon} from '../../assets/icons/ArrowLeftIcon';
@@ -52,7 +52,7 @@ export function CIcon({
   size,
   onPress,
 }: CIconProps) {
-  const {colors} = useApptheme();
+  const {colors} = useAppTheme();
   const SVGIcon = iconRegistry[name];
 
   if (onPress) {

@@ -14,10 +14,11 @@ import {
 } from "@expo-google-fonts/raleway";
 import * as SplashScreen from "expo-splash-screen";
 
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "@shopify/restyle";
 import { theme } from "./src/theme/theme";
 import { LoginScreen } from "./src/screens/auth/LoginScreen/LoginScreen";
+import { SignUpScreen } from "./src/screens/auth/SignUpScreen/SignUpScreen";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -46,10 +47,11 @@ export default function App() {
   }
 
   return (
-    <ThemeProvider theme={theme}>
-      <SafeAreaView onLayout={onLayoutRootView}>
-        <LoginScreen />
-      </SafeAreaView>
-    </ThemeProvider>
+    <SafeAreaProvider onLayout={onLayoutRootView}>
+      <ThemeProvider theme={theme}>
+        {/* <LoginScreen /> */}
+        <SignUpScreen />
+      </ThemeProvider>
+    </SafeAreaProvider>
   );
 }
