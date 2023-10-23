@@ -31,10 +31,10 @@ export function Routes() {
           fullScreenGestureEnabled: true,
         }}
       >
-        {/* <Screen name="LoginScreen" component={LoginScreen} />
+        <Screen name="LoginScreen" component={LoginScreen} />
         <Screen name="SignUpScreen" component={SignUpScreen} />
         <Screen name="SuccessScreen" component={SuccessScreen} />
-        <Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} /> */}
+        <Screen name="ForgotPasswordScreen" component={ForgotPasswordScreen} />
       </Navigator>
     </NavigationContainer>
   );
