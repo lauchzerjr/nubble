@@ -19,6 +19,7 @@ import { ThemeProvider } from "@shopify/restyle";
 import { theme } from "./src/theme/theme";
 import { LoginScreen } from "./src/screens/auth/LoginScreen/LoginScreen";
 import { SignUpScreen } from "./src/screens/auth/SignUpScreen/SignUpScreen";
+import { Routes } from "./src/routes/Routes";
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,8 +50,7 @@ export default function App() {
   return (
     <SafeAreaProvider onLayout={onLayoutRootView}>
       <ThemeProvider theme={theme}>
-        {/* <LoginScreen /> */}
-        <SignUpScreen />
+        <Routes />
       </ThemeProvider>
     </SafeAreaProvider>
   );
