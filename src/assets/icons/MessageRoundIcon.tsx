@@ -2,13 +2,13 @@ import React from 'react';
 
 import {Svg, Path, Circle} from 'react-native-svg';
 
-import {IconBase} from '../../components/Icon/Icon';
+import {CIconBase} from '../../components/CIcon/CIcon';
 import {palette} from '../../theme/theme';
 
 export function MessageRoundIcon({
   size = 48,
   color = palette.greenPrimary,
-}: IconBase) {
+}: CIconBase) {
   return (
     <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
       <Circle cx="24" cy="24" r="24" fill={color} />

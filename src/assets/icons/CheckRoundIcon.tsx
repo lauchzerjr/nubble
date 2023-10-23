@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
-import {Svg, Path, Circle} from 'react-native-svg';
+import { Svg, Path, Circle } from "react-native-svg";
 
-import {IconBase} from '../../components/Icon/Icon';
-import {palette} from '../../theme/theme';
+import { CIconBase } from "../../components/CIcon/CIcon";
+import { palette } from "../../theme/theme";
 
 export function CheckRoundIcon({
   size = 48,
   color = palette.greenSuccess,
-}: IconBase) {
+}: CIconBase) {
   return (
     <Svg width={size} height={size} viewBox="0 0 48 48" fill="none">
       <Circle cx="24" cy="24" r="24" fill={color} />

@@ -46,6 +46,7 @@ export interface CIconProps {
   size?: number;
   onPress?: () => void;
 }
+
 export function CIcon({
   name,
   color = 'backgroundContrast',

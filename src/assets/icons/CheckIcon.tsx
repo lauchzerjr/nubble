@@ -2,9 +2,9 @@ import React from 'react';
 
 import {Svg, Path} from 'react-native-svg';
 
-import {IconBase} from '../../components/Icon/Icon';
+import {CIconBase} from '../../components/CIcon/CIcon';
 
-export function CheckIcon({size = 20, color = 'black'}: IconBase) {
+export function CheckIcon({size = 20, color = 'black'}: CIconBase) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
       <Path
