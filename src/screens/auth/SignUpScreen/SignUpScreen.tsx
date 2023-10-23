@@ -1,12 +1,27 @@
 import React from "react";
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+
 import { CText } from "../../../components/CText/CText";
 import { CScreen } from "../../../components/CScreen/CScreen";
 import { CTextInput } from "../../../components/CTextInput/CTextInput";
 import { CButton } from "../../../components/CButton/CButton";
 import { CPasswordInput } from "../../../components/CPasswordInput/CPasswordInput";
 
-export function SignUpScreen() {
-  const submitForm = () => {};
+import { RootStackParamList } from "../../../routes/Routes";
+
+type ScreenProps = NativeStackScreenProps<RootStackParamList, "SignUpScreen">;
+
+export function SignUpScreen({navigation}: ScreenProps) {
+  const submitForm = () => {
+    navigation.navigate('SuccessScreen', {
+      title: 'Sua conta foi criada com sucesso!',
+      description: 'Agora é só fazer login na nossa plataforma',
+      icon: {
+        name: 'checkRound', 
+        color: 'success'
+      }
+    })
+  };
 
   return (
     <CScreen canGoBack isScroll>
@@ -38,7 +53,7 @@ export function SignUpScreen() {
         boxProps={{ mb: "s40" }}
       />
 
-      <CButton title="Criar uma conta" onPress={submitForm} />
+      <CButton title="Criar minha conta" onPress={submitForm} />
     </CScreen>
   );
 }
