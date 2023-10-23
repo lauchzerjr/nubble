@@ -8,19 +8,22 @@ import { CButton } from "../../../components/CButton/CButton";
 import { CPasswordInput } from "../../../components/CPasswordInput/CPasswordInput";
 
 import { RootStackParamList } from "../../../routes/Routes";
+import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, "SignUpScreen">;
 
-export function SignUpScreen({navigation}: ScreenProps) {
+export function SignUpScreen({ navigation }: ScreenProps) {
+  const { reset } = useResetNavigationSuccess();
+
   const submitForm = () => {
-    navigation.navigate('SuccessScreen', {
-      title: 'Sua conta foi criada com sucesso!',
-      description: 'Agora é só fazer login na nossa plataforma',
+    reset({
+      title: "Sua conta foi criada com sucesso!",
+      description: "Agora é só fazer login na nossa plataforma",
       icon: {
-        name: 'checkRound', 
-        color: 'success'
-      }
-    })
+        name: "checkRound",
+        color: "success",
+      },
+    });
   };
 
   return (

@@ -6,6 +6,7 @@ import { CText } from "../../../components/CText/CText";
 import { CTextInput } from "../../../components/CTextInput/CTextInput";
 import { CButton } from "../../../components/CButton/CButton";
 import { RootStackParamList } from "../../../routes/Routes";
+import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
 
 type ScreenProps = NativeStackScreenProps<
   RootStackParamList,
@@ -13,15 +14,17 @@ type ScreenProps = NativeStackScreenProps<
 >;
 
 export function ForgotPasswordScreen({ navigation }: ScreenProps) {
+  const { reset } = useResetNavigationSuccess();
   function submitForm() {
-    navigation.navigate('SuccessScreen', {
-      title: 'Enviamos as instruções para seu e-mail',
-      description: 'Clique no link enviado no seu e-mail para recuperar sua senha',
+    reset({
+      title: "Enviamos as instruções para seu e-mail",
+      description:
+        "Clique no link enviado no seu e-mail para recuperar sua senha",
       icon: {
-        name: 'messageRound',
-        color: 'primary'
-      }
-    })
+        name: "messageRound",
+        color: "primary",
+      },
+    });
   }
   return (
     <CScreen canGoBack>
@@ -38,7 +41,7 @@ export function ForgotPasswordScreen({ navigation }: ScreenProps) {
         boxProps={{ mb: "s48" }}
       />
 
-      <CButton mt="s12" title="Recuperar senha"  onPress={submitForm}/>
+      <CButton mt="s12" title="Recuperar senha" onPress={submitForm} />
     </CScreen>
   );
 }
