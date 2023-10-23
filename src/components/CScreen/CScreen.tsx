@@ -1,14 +1,15 @@
 import React from "react";
-import { CBox } from "../CBox/CBox";
+import { CBox, CTouchableOpacityBox } from "../CBox/CBox";
 import { CIcon } from "../CIcon/CIcon";
 import { CText } from "../CText/CText";
-import { KeyboardAvoidingView, Platform, ScrollView } from "react-native";
+import { KeyboardAvoidingView, Platform } from "react-native";
 import {
   ScrollViewContainer,
   ViewContainer,
 } from "./components/ScreenContainer";
 import { useAppTheme } from "../../hooks/useAppTheme";
 import { useAppSafeArea } from "../../hooks/useAppSafeArea";
+import { useNavigation } from "@react-navigation/native";
 
 interface CScreenProps {
   children: React.ReactNode;
@@ -23,6 +24,9 @@ export function CScreen({
 }: CScreenProps) {
   const { bottom, top } = useAppSafeArea();
   const { colors } = useAppTheme();
+
+  const navigation = useNavigation();
+
   const Container = isScroll ? ScrollViewContainer : ViewContainer;
 
   return (
@@ -37,13 +41,18 @@ export function CScreen({
           style={{ paddingTop: top, paddingBottom: bottom }}
         >
           {canGoBack && (
-            <CBox mb="s24" flexDirection="row" alignItems="center">
+            <CTouchableOpacityBox
+              onPress={navigation.goBack}
+              mb="s24"
+              flexDirection="row"
+              alignItems="center"
+            >
               <CIcon name="arrowLeft" color="primary" />
 
               <CText preset="paragraphMedium" presetFont="medium" ml="s8">
                 Voltar
               </CText>
-            </CBox>
+            </CTouchableOpacityBox>
           )}
           {children}
         </CBox>

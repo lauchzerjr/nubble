@@ -35,7 +35,7 @@ export function CTextInput({
   return (
     <CBox {...boxProps}>
       <Pressable onPress={focusInput}>
-        <CText preset="paragraphMedium" mb="s4">
+        <CText preset="paragraphMedium" presetFont="medium" mb="s4">
           {label}
         </CText>
         <CBox {...$textInputContainer}>
