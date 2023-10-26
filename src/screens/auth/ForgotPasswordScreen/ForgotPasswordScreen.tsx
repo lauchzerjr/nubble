@@ -1,12 +1,18 @@
 import React from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
+import { CFormTextInput } from "../../../components/CForm/CFormTextInput";
 import { CScreen } from "../../../components/CScreen/CScreen";
 import { CText } from "../../../components/CText/CText";
-import { CTextInput } from "../../../components/CTextInput/CTextInput";
 import { CButton } from "../../../components/CButton/CButton";
 import { RootStackParamList } from "../../../routes/Routes";
 import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
+import {
+  ForgotPasswordSchema,
+  forgotPasswordSchema,
+} from "./forgotPasswordSchema";
 
 type ScreenProps = NativeStackScreenProps<
   RootStackParamList,
@@ -15,7 +21,16 @@ type ScreenProps = NativeStackScreenProps<
 
 export function ForgotPasswordScreen({ navigation }: ScreenProps) {
   const { reset } = useResetNavigationSuccess();
-  function submitForm() {
+  const { control, formState, handleSubmit } = useForm<ForgotPasswordSchema>({
+    resolver: zodResolver(forgotPasswordSchema),
+    defaultValues: {
+      email: "",
+    },
+    mode: "onChange",
+  });
+
+  function submitForm(values: ForgotPasswordSchema) {
+    console.log(values);
     reset({
       title: "Enviamos as instruções para seu e-mail",
       description:
@@ -35,13 +50,20 @@ export function ForgotPasswordScreen({ navigation }: ScreenProps) {
         Digite seu e-mail e enviaremos as instruções para redefinição de senha
       </CText>
 
-      <CTextInput
+      <CFormTextInput
+        control={control}
+        name="email"
         label="E-mail"
         placeholder="Digite seu e-mail"
         boxProps={{ mb: "s48" }}
       />
 
-      <CButton mt="s12" title="Recuperar senha" onPress={submitForm} />
+      <CButton
+        disabled={!formState.isValid}
+        mt="s12"
+        title="Recuperar senha"
+        onPress={handleSubmit(submitForm)}
+      />
     </CScreen>
   );
 }
