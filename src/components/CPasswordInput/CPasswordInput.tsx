@@ -3,7 +3,7 @@ import React from "react";
 import { CTextInput, CTextInputProps } from "../CTextInput/CTextInput";
 import { CIcon } from "../CIcon/CIcon";
 
-type CPasswordInputProps = Omit<CTextInputProps, "iconRight">;
+export type CPasswordInputProps = Omit<CTextInputProps, "iconRight">;
 
 export function CPasswordInput(props: CPasswordInputProps) {
   const [isSecureTextEntry, setIsSecureTextEntry] = React.useState(true);

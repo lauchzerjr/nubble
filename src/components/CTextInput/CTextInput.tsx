@@ -40,6 +40,7 @@ export function CTextInput({
         </CText>
         <CBox {...$textInputContainer}>
           <TextInput
+            autoCapitalize="none"
             ref={inputRef}
             placeholderTextColor={colors.gray2}
             style={$textInputStyle}
