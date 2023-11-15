@@ -1,6 +1,7 @@
 import React from "react";
 
-import { CTextInput, CTextInputProps, CIcon } from "@components";
+import { CIcon } from "../CIcon/CIcon";
+import { CTextInput, CTextInputProps } from "../CTextInput/CTextInput";
 
 export type CPasswordInputProps = Omit<CTextInputProps, "iconRight">;
 

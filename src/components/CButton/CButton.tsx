@@ -1,11 +1,8 @@
 import React from "react";
 import { buttonPresets } from "./buttonPresets";
-import {
-  CActivityIndicator,
-  CTouchableOpacityBox,
-  CTouchableOpacityBoxProps,
-  CText,
-} from "@components";
+import { CActivityIndicator } from "../CActivityIndicator/CActivityIndicator";
+import { CTouchableOpacityBox, CTouchableOpacityBoxProps } from "../CBox/CBox";
+import { CText } from "../CText/CText";
 
 export type ButtonPreset = "primary" | "outline";
 

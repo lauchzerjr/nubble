@@ -2,7 +2,9 @@ import React from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-import { CIcon, CText, CBox, CTouchableOpacityBox } from "@components";
+import { CBox, CTouchableOpacityBox } from "../CBox/CBox";
+import { CIcon } from "../CIcon/CIcon";
+import { CText } from "../CText/CText";
 import {
   ScrollViewContainer,
   ViewContainer,
