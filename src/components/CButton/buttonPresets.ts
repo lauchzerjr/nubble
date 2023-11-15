@@ -1,5 +1,5 @@
-import {ThemeColorsProps} from '../../theme/theme';
-import {CTouchableOpacityBoxProps} from '../CBox/CBox';
+import {ThemeColorsProps} from '@theme';
+import {CTouchableOpacityBoxProps} from '@components';
 import {ButtonPreset} from './CButton';
 
 interface ButtonUI {

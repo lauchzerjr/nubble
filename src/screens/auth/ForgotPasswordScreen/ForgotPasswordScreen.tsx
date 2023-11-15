@@ -3,12 +3,9 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { CFormTextInput } from "../../../components/CForm/CFormTextInput";
-import { CScreen } from "../../../components/CScreen/CScreen";
-import { CText } from "../../../components/CText/CText";
-import { CButton } from "../../../components/CButton/CButton";
-import { RootStackParamList } from "../../../routes/Routes";
-import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
+import { CFormTextInput, CScreen, CText, CButton } from "@components";
+import { RootStackParamList } from "@routes";
+import { useResetNavigationSuccess } from "@hooks";
 import {
   ForgotPasswordSchema,
   forgotPasswordSchema,

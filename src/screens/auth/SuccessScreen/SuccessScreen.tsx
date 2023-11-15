@@ -1,17 +1,14 @@
 import React from "react";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 
-import { CScreen } from "../../../components/CScreen/CScreen";
-import { CIcon } from "../../../components/CIcon/CIcon";
-import { CText } from "../../../components/CText/CText";
-import { CButton } from "../../../components/CButton/CButton";
-import { RootStackParamList } from "../../../routes/Routes";
+import { CScreen, CIcon, CText, CButton } from "@components";
+import { RootStackParamList } from "@routes";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, "SuccessScreen">;
 
 export function SuccessScreen({ route, navigation }: ScreenProps) {
   function goBackToBegin() {
-    navigation.goBack()
+    navigation.goBack();
   }
   return (
     <CScreen>

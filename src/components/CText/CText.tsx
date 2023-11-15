@@ -1,7 +1,7 @@
 import React from "react";
-import { Text, TextProps, TextStyle } from "react-native";
+import { TextStyle } from "react-native";
 import { createText } from "@shopify/restyle";
-import { ThemeProps } from "../../theme/theme";
+import { ThemeProps } from "@theme";
 
 const SRText = createText<ThemeProps>();
 type SRTextProps = React.ComponentProps<typeof SRText>;
@@ -63,7 +63,7 @@ type VariantsFontFamily =
   | "black"
   | "blackItalic";
 
-  export const $fontFamily: Record<VariantsFontFamily, TextStyle> = {
+export const $fontFamily: Record<VariantsFontFamily, TextStyle> = {
   extraLight: { fontFamily: "Raleway_200ExtraLight" },
   extraLightItalic: { fontFamily: "Raleway_200ExtraLight_Italic" },
   regular: { fontFamily: "Raleway_400Regular" },

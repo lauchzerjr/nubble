@@ -3,14 +3,15 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
-import { CButton } from "../../../components/CButton/CButton";
-import { CFormPasswordInput } from "../../../components/CForm/CFormPasswordInput";
-import { CFormTextInput } from "../../../components/CForm/CFormTextInput";
-
-import { CScreen } from "../../../components/CScreen/CScreen";
-import { CText } from "../../../components/CText/CText";
-import { useResetNavigationSuccess } from "../../../hooks/useResetNavigationSuccess";
-import { RootStackParamList } from "../../../routes/Routes";
+import {
+  CButton,
+  CFormPasswordInput,
+  CFormTextInput,
+  CScreen,
+  CText,
+} from "@components";
+import { useResetNavigationSuccess } from "@hooks";
+import { RootStackParamList } from "@routes";
 import { signUpSchema, SignUpSchema } from "./signUpSchema";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, "SignUpScreen">;

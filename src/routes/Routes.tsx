@@ -1,10 +1,11 @@
 import React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+
 import { LoginScreen } from "../screens/auth/LoginScreen/LoginScreen";
 import { SignUpScreen } from "../screens/auth/SignUpScreen/SignUpScreen";
 import { SuccessScreen } from "../screens/auth/SuccessScreen/SuccessScreen";
-import { CIconProps } from "../components/CIcon/CIcon";
+import { CIconProps } from "@components";
 import { ForgotPasswordScreen } from "../screens/auth/ForgotPasswordScreen/ForgotPasswordScreen";
 
 export type RootStackParamList = {
@@ -15,7 +16,7 @@ export type RootStackParamList = {
     description: string;
     icon: Pick<CIconProps, "name" | "color">;
   };
-  ForgotPasswordScreen: undefined
+  ForgotPasswordScreen: undefined;
 
   // TODO: Success Screen: icon, title, description
 };

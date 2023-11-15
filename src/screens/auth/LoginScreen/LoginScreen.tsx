@@ -1,18 +1,18 @@
 import React from "react";
+import { Alert } from "react-native";
 import { NativeStackScreenProps } from "@react-navigation/native-stack";
 import { zodResolver } from "@hookform/resolvers/zod";
-
-import { CText } from "../../../components/CText/CText";
-import { CTextInput } from "../../../components/CTextInput/CTextInput";
-import { CIcon } from "../../../components/CIcon/CIcon";
-import { CButton } from "../../../components/CButton/CButton";
-import { CScreen } from "../../../components/CScreen/CScreen";
-import { RootStackParamList } from "../../../routes/Routes";
-import { LoginSchema, loginSchema } from "./loginSchema";
 import { useForm } from "react-hook-form";
-import { CFormTextInput } from "../../../components/CForm/CFormTextInput";
-import { CFormPasswordInput } from "../../../components/CForm/CFormPasswordInput";
-import { Alert } from "react-native";
+
+import {
+  CText,
+  CButton,
+  CScreen,
+  CFormTextInput,
+  CFormPasswordInput,
+} from "@components";
+import { RootStackParamList } from "@routes";
+import { LoginSchema, loginSchema } from "./loginSchema";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, "LoginScreen">;
 
@@ -39,7 +39,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
   }
 
   return (
-    <CScreen>
+    <CScreen isScroll>
       <CText mb="s8" preset="headingLarge" presetFont="bold">
         Olá
       </CText>

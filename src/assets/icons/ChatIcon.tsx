@@ -2,7 +2,7 @@ import React from 'react';
 
 import {Svg, Path} from 'react-native-svg';
 
-import {CIconBase} from '../../components/CIcon/CIcon';
+import {CIconBase} from '@components';
 
 export function ChatIcon({size = 20, color = 'black'}: CIconBase) {
   return (

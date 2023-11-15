@@ -2,8 +2,8 @@ import React from 'react';
 
 import {Svg, Path, Circle} from 'react-native-svg';
 
-import {CIconBase} from '../../components/CIcon/CIcon';
-import {palette} from '../../theme/theme';
+import {CIconBase} from '@components';
+import {palette} from '@theme';
 
 export function MessageRoundIcon({
   size = 48,
