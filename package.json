@@ -6,7 +6,9 @@
     "start": "expo start --dev-client",
     "android": "expo run:android",
     "ios": "expo run:ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
   },
   "dependencies": {
     "@expo-google-fonts/raleway": "^0.2.3",
@@ -30,7 +32,10 @@
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
-    "babel-plugin-module-resolver": "^5.0.0"
+    "babel-plugin-module-resolver": "^5.0.0",
+    "eslint": "^8.53.0",
+    "eslint-config-universe": "^12.0.0",
+    "prettier": "^3.1.0"
   },
   "private": true
 }

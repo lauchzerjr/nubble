@@ -1,4 +1,3 @@
-import React from "react";
 import {
   useFonts,
   Raleway_200ExtraLight,
@@ -12,14 +11,13 @@ import {
   Raleway_900Black,
   Raleway_900Black_Italic,
 } from "@expo-google-fonts/raleway";
-import * as SplashScreen from "expo-splash-screen";
-
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import { ThemeProvider } from "@shopify/restyle";
-import { theme } from "./src/theme/theme";
-import { LoginScreen } from "./src/screens/auth/LoginScreen/LoginScreen";
-import { SignUpScreen } from "./src/screens/auth/SignUpScreen/SignUpScreen";
+import * as SplashScreen from "expo-splash-screen";
+import React from "react";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+
 import { Routes } from "./src/routes/Routes";
+import { theme } from "./src/theme/theme";
 
 SplashScreen.preventAutoHideAsync();
 

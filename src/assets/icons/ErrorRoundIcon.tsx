@@ -1,9 +1,8 @@
-import React from 'react';
+import React from "react";
+import { Svg, Path, Circle } from "react-native-svg";
 
-import {Svg, Path, Circle} from 'react-native-svg';
-
-import {CIconBase} from '@components';
-import {palette} from '@theme';
+import { CIconBase } from "@components";
+import { palette } from "@theme";
 
 export function ErrorRoundIcon({
   size = 48,
