@@ -1,6 +1,8 @@
 import React from "react";
-import { CIconBase } from "@components";
+
 import { Svg, Path } from "react-native-svg";
+
+import { CIconBase } from "@components";
 
 export function ArrowLeftIcon({ size = 20, color = "black" }: CIconBase) {
   return (

@@ -1,7 +1,9 @@
-import { CScreen, CIcon, CText, CButton } from "@components";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { RootStackParamList } from "@routes";
 import React from "react";
+
+import { NativeStackScreenProps } from "@react-navigation/native-stack";
+
+import { CScreen, CIcon, CText, CButton } from "@components";
+import { RootStackParamList } from "@routes";
 
 type ScreenProps = NativeStackScreenProps<RootStackParamList, "SuccessScreen">;
 

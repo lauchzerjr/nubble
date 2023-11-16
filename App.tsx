@@ -1,3 +1,5 @@
+import React from "react";
+
 import {
   useFonts,
   Raleway_200ExtraLight,
@@ -13,7 +15,6 @@ import {
 } from "@expo-google-fonts/raleway";
 import { ThemeProvider } from "@shopify/restyle";
 import * as SplashScreen from "expo-splash-screen";
-import React from "react";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 
 import { Routes } from "./src/routes/Routes";

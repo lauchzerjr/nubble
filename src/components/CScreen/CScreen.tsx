@@ -1,15 +1,18 @@
 import React from "react";
 import { KeyboardAvoidingView, Platform } from "react-native";
+
 import { useNavigation } from "@react-navigation/native";
+
+import { useAppTheme, useAppSafeArea } from "@hooks";
 
 import { CBox, CTouchableOpacityBox } from "../CBox/CBox";
 import { CIcon } from "../CIcon/CIcon";
 import { CText } from "../CText/CText";
+
 import {
   ScrollViewContainer,
   ViewContainer,
 } from "./components/ScreenContainer";
-import { useAppTheme, useAppSafeArea } from "@hooks";
 
 interface CScreenProps {
   children: React.ReactNode;

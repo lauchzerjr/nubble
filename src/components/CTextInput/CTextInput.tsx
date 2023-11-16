@@ -1,9 +1,10 @@
 import React from "react";
 import { Pressable, TextInput, TextInputProps, TextStyle } from "react-native";
 
-import { $fontFamily, $fontSizes, CText } from "../CText/CText";
-import { CBox, BoxProps } from "../CBox/CBox";
 import { useAppTheme } from "@hooks";
+
+import { CBox, BoxProps } from "../CBox/CBox";
+import { $fontFamily, $fontSizes, CText } from "../CText/CText";
 
 export interface CTextInputProps extends TextInputProps {
   label: string;
