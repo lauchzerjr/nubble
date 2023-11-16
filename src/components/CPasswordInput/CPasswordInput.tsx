@@ -1,15 +1,15 @@
-import React from "react";
+import React from 'react';
 
-import { CIcon } from "../CIcon/CIcon";
-import { CTextInput, CTextInputProps } from "../CTextInput/CTextInput";
+import { CIcon } from '../CIcon/CIcon';
+import { CTextInput, CTextInputProps } from '../CTextInput/CTextInput';
 
-export type CPasswordInputProps = Omit<CTextInputProps, "iconRight">;
+export type CPasswordInputProps = Omit<CTextInputProps, 'iconRight'>;
 
 export function CPasswordInput(props: CPasswordInputProps) {
   const [isSecureTextEntry, setIsSecureTextEntry] = React.useState(true);
 
   function toggleSecureTextEntry() {
-    setIsSecureTextEntry((prev) => !prev);
+    setIsSecureTextEntry(prev => !prev);
   }
 
   return (
@@ -19,7 +19,7 @@ export function CPasswordInput(props: CPasswordInputProps) {
       iconRight={
         <CIcon
           color="gray2"
-          name={isSecureTextEntry ? "eyeOn" : "eyeOff"}
+          name={isSecureTextEntry ? 'eyeOn' : 'eyeOff'}
           onPress={toggleSecureTextEntry}
         />
       }

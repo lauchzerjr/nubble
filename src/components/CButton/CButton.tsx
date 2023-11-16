@@ -1,12 +1,12 @@
-import React from "react";
+import React from 'react';
 
-import { CActivityIndicator } from "../CActivityIndicator/CActivityIndicator";
-import { CTouchableOpacityBox, CTouchableOpacityBoxProps } from "../CBox/CBox";
-import { CText } from "../CText/CText";
+import { CActivityIndicator } from '../CActivityIndicator/CActivityIndicator';
+import { CTouchableOpacityBox, CTouchableOpacityBoxProps } from '../CBox/CBox';
+import { CText } from '../CText/CText';
 
-import { buttonPresets } from "./buttonPresets";
+import { buttonPresets } from './buttonPresets';
 
-export type ButtonPreset = "primary" | "outline";
+export type ButtonPreset = 'primary' | 'outline';
 
 interface CButtonProps extends CTouchableOpacityBoxProps {
   title: string;
@@ -18,11 +18,11 @@ interface CButtonProps extends CTouchableOpacityBoxProps {
 export function CButton({
   title,
   loading,
-  preset = "primary",
+  preset = 'primary',
   disabled,
   ...cTouchableOpacityBoxProps
 }: CButtonProps) {
-  const buttonPreset = buttonPresets[preset][disabled ? "disabled" : "default"];
+  const buttonPreset = buttonPresets[preset][disabled ? 'disabled' : 'default'];
 
   return (
     <CTouchableOpacityBox
@@ -33,16 +33,14 @@ export function CButton({
       justifyContent="center"
       borderRadius="s16"
       {...buttonPreset.container}
-      {...cTouchableOpacityBoxProps}
-    >
+      {...cTouchableOpacityBoxProps}>
       {loading ? (
         <CActivityIndicator color={buttonPreset.content} />
       ) : (
         <CText
           preset="paragraphMedium"
           presetFont="bold"
-          color={buttonPreset.content}
-        >
+          color={buttonPreset.content}>
           {title}
         </CText>
       )}

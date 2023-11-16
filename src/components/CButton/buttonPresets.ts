@@ -1,7 +1,7 @@
-import { CTouchableOpacityBoxProps } from "@components";
-import { ThemeColorsProps } from "@theme";
+import { CTouchableOpacityBoxProps } from '@components';
+import { ThemeColorsProps } from '@theme';
 
-import { ButtonPreset } from "./CButton";
+import { ButtonPreset } from './CButton';
 
 interface ButtonUI {
   container: CTouchableOpacityBoxProps;
@@ -18,31 +18,31 @@ export const buttonPresets: Record<
   primary: {
     default: {
       container: {
-        backgroundColor: "primary",
+        backgroundColor: 'primary',
       },
-      content: "primaryContrast",
+      content: 'primaryContrast',
     },
     disabled: {
       container: {
-        backgroundColor: "gray4",
+        backgroundColor: 'gray4',
       },
-      content: "gray2",
+      content: 'gray2',
     },
   },
   outline: {
     default: {
       container: {
         borderWidth: 1,
-        borderColor: "primary",
+        borderColor: 'primary',
       },
-      content: "primary",
+      content: 'primary',
     },
     disabled: {
       container: {
         borderWidth: 1,
-        borderColor: "gray4",
+        borderColor: 'gray4',
       },
-      content: "gray2",
+      content: 'gray2',
     },
   },
 };

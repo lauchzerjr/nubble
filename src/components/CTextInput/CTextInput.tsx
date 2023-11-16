@@ -1,10 +1,10 @@
-import React from "react";
-import { Pressable, TextInput, TextInputProps, TextStyle } from "react-native";
+import React from 'react';
+import { Pressable, TextInput, TextInputProps, TextStyle } from 'react-native';
 
-import { useAppTheme } from "@hooks";
+import { useAppTheme } from '@hooks';
 
-import { CBox, BoxProps } from "../CBox/CBox";
-import { $fontFamily, $fontSizes, CText } from "../CText/CText";
+import { CBox, BoxProps } from '../CBox/CBox';
+import { $fontFamily, $fontSizes, CText } from '../CText/CText';
 
 export interface CTextInputProps extends TextInputProps {
   label: string;
@@ -27,11 +27,11 @@ export function CTextInput({
   };
 
   const $textInputContainer: BoxProps = {
-    flexDirection: "row",
+    flexDirection: 'row',
     borderWidth: errorMessage ? 2 : 1,
-    borderColor: errorMessage ? "error" : "gray4",
-    p: "s16",
-    borderRadius: "s12",
+    borderColor: errorMessage ? 'error' : 'gray4',
+    p: 's16',
+    borderRadius: 's12',
   };
 
   return (

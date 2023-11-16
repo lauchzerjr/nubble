@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 import {
   useFonts,
@@ -12,13 +12,13 @@ import {
   Raleway_700Bold_Italic,
   Raleway_900Black,
   Raleway_900Black_Italic,
-} from "@expo-google-fonts/raleway";
-import { ThemeProvider } from "@shopify/restyle";
-import * as SplashScreen from "expo-splash-screen";
-import { SafeAreaProvider } from "react-native-safe-area-context";
+} from '@expo-google-fonts/raleway';
+import { ThemeProvider } from '@shopify/restyle';
+import * as SplashScreen from 'expo-splash-screen';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 
-import { Routes } from "./src/routes/Routes";
-import { theme } from "./src/theme/theme";
+import { Routes } from './src/routes/Routes';
+import { theme } from './src/theme/theme';
 
 SplashScreen.preventAutoHideAsync();
 

@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 
-import { Svg, Path } from "react-native-svg";
+import { Svg, Path } from 'react-native-svg';
 
-import { CIconBase } from "@components";
+import { CIconBase } from '@components';
 
-export function HeartFillIcon({ size = 20, color = "black" }: CIconBase) {
+export function HeartFillIcon({ size = 20, color = 'black' }: CIconBase) {
   return (
     <Svg width={size} height={size} viewBox="0 0 20 20" fill="none">
       <Path

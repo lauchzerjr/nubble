@@ -1,9 +1,9 @@
-import React from "react";
-import { Alert } from "react-native";
+import React from 'react';
+import { Alert } from 'react-native';
 
-import { zodResolver } from "@hookform/resolvers/zod";
-import { NativeStackScreenProps } from "@react-navigation/native-stack";
-import { useForm } from "react-hook-form";
+import { zodResolver } from '@hookform/resolvers/zod';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { useForm } from 'react-hook-form';
 
 import {
   CText,
@@ -11,21 +11,21 @@ import {
   CScreen,
   CFormTextInput,
   CFormPasswordInput,
-} from "@components";
-import { RootStackParamList } from "@routes";
+} from '@components';
+import { RootStackParamList } from '@routes';
 
-import { LoginSchema, loginSchema } from "./loginSchema";
+import { LoginSchema, loginSchema } from './loginSchema';
 
-type ScreenProps = NativeStackScreenProps<RootStackParamList, "LoginScreen">;
+type ScreenProps = NativeStackScreenProps<RootStackParamList, 'LoginScreen'>;
 
 export function LoginScreen({ navigation }: ScreenProps) {
   const { control, formState, handleSubmit } = useForm<LoginSchema>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: "",
-      password: "",
+      email: '',
+      password: '',
     },
-    mode: "onChange",
+    mode: 'onChange',
   });
 
   function submitForm({ email, password }: LoginSchema) {
@@ -33,11 +33,11 @@ export function LoginScreen({ navigation }: ScreenProps) {
   }
 
   function navigateToSignUpScreen() {
-    navigation.navigate("SignUpScreen");
+    navigation.navigate('SignUpScreen');
   }
 
   function navigateToForgotPasswordScreen() {
-    navigation.navigate("ForgotPasswordScreen");
+    navigation.navigate('ForgotPasswordScreen');
   }
 
   return (
@@ -54,7 +54,7 @@ export function LoginScreen({ navigation }: ScreenProps) {
         name="email"
         label="E-mail"
         placeholder="Digite seu e-mail"
-        boxProps={{ mb: "s20" }}
+        boxProps={{ mb: 's20' }}
       />
 
       <CFormPasswordInput
@@ -62,15 +62,14 @@ export function LoginScreen({ navigation }: ScreenProps) {
         name="password"
         label="Senha"
         placeholder="Digite sua senha"
-        boxProps={{ mb: "s20" }}
+        boxProps={{ mb: 's20' }}
       />
 
       <CText
         onPress={navigateToForgotPasswordScreen}
         color="primary"
         preset="paragraphSmall"
-        presetFont="bold"
-      >
+        presetFont="bold">
         Esqueci minha senha
       </CText>
 

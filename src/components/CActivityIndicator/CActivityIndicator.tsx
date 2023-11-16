@@ -1,11 +1,11 @@
-import React from "react";
-import { ActivityIndicator, ActivityIndicatorProps } from "react-native";
+import React from 'react';
+import { ActivityIndicator, ActivityIndicatorProps } from 'react-native';
 
-import { useAppTheme } from "@hooks";
-import { ThemeColorsProps } from "@theme";
+import { useAppTheme } from '@hooks';
+import { ThemeColorsProps } from '@theme';
 
 interface CActivityIndicatorProps
-  extends Omit<ActivityIndicatorProps, "color"> {
+  extends Omit<ActivityIndicatorProps, 'color'> {
   color: ThemeColorsProps;
 }
 export function CActivityIndicator({ color }: CActivityIndicatorProps) {
