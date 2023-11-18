@@ -25,7 +25,6 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
 
   return (
     <CScreen style={$screen}>
-      {/* <HomeHeader /> */}
       <FlatList
         data={postList}
         keyExtractor={item => item.id}
