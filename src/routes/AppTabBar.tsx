@@ -1,6 +1,10 @@
+import { ViewStyle } from 'react-native';
+
 import { BottomTabBarProps } from '@react-navigation/bottom-tabs';
 
 import { CBox, CIcon, CText, CTouchableOpacityBox } from '@components';
+import { useAppSafeArea } from '@hooks';
+import { $shadowProps } from '@theme';
 
 import { AppTabNavigatorParamList } from './AppTabNavigator';
 import { mapTabScreenToProps } from './mapTabScreenToProps';
@@ -10,8 +14,13 @@ export function AppTabBar({
   descriptors,
   navigation,
 }: BottomTabBarProps) {
+  const { bottom } = useAppSafeArea();
   return (
-    <CBox flexDirection="row">
+    <CBox
+      pt="s12"
+      flexDirection="row"
+      bg="background"
+      style={[{ paddingBottom: bottom }, $shadowProps]}>
       {state.routes.map((route, index) => {
         const { options } = descriptors[route.key];
 
@@ -52,10 +61,11 @@ export function AppTabBar({
             onLongPress={onLongPress}
             style={{ flex: 1 }}>
             <CIcon
-              color={isFocused ? 'primary' : 'background'}
+              color={isFocused ? 'primary' : 'backgroundContrast'}
               name={isFocused ? tabItem.icon.focused : tabItem.icon.unfocused}
             />
             <CText
+              mt="s4"
               presetFont="medium"
               preset="paragraphCaption"
               color={isFocused ? 'primary' : 'backgroundContrast'}>
