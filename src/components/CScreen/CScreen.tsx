@@ -5,7 +5,7 @@ import { useNavigation } from '@react-navigation/native';
 
 import { useAppTheme, useAppSafeArea } from '@hooks';
 
-import { CBox, CTouchableOpacityBox } from '../CBox/CBox';
+import { BoxProps, CBox, CTouchableOpacityBox } from '../CBox/CBox';
 import { CIcon } from '../CIcon/CIcon';
 import { CText } from '../CText/CText';
 
@@ -14,7 +14,7 @@ import {
   ViewContainer,
 } from './components/ScreenContainer';
 
-interface CScreenProps {
+interface CScreenProps extends BoxProps {
   children: React.ReactNode;
   canGoBack?: boolean;
   isScroll?: boolean;
@@ -24,6 +24,8 @@ export function CScreen({
   children,
   canGoBack = false,
   isScroll = false,
+  style,
+  ...boxProps
 }: CScreenProps) {
   const { bottom, top } = useAppSafeArea();
   const { colors } = useAppTheme();
@@ -40,7 +42,8 @@ export function CScreen({
         <CBox
           pb="s20"
           paddingHorizontal="s24"
-          style={{ paddingTop: top, paddingBottom: bottom }}>
+          style={[{ paddingTop: top, paddingBottom: bottom }, style]}
+          {...boxProps}>
           {canGoBack && (
             <CTouchableOpacityBox
               onPress={navigation.goBack}

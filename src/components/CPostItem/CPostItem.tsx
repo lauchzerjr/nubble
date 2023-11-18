@@ -12,7 +12,7 @@ interface PostItemProps {
 
 export function CPostItem({ post }: PostItemProps) {
   return (
-    <CBox mb="s24">
+    <CBox paddingHorizontal="s24" mb="s24">
       <CPostHeader author={post.author} />
       <CPostImage imageURL={post.imageURL} />
       <CPostActions

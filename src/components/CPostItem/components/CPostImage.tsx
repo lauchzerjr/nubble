@@ -10,7 +10,11 @@ export function CPostImage({ imageURL }: CPostImageProps) {
     <Image
       resizeMode="cover"
       source={{ uri: imageURL }}
-      style={{ width: Dimensions.get('screen').width, height: 400 }}
+      style={{
+        width: Dimensions.get('screen').width,
+        height: 400,
+        marginHorizontal: -24,
+      }}
     />
   );
 }
