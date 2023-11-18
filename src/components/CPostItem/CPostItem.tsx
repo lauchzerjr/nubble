@@ -3,6 +3,7 @@ import { Post } from '@domain';
 import { CBox } from '../CBox/CBox';
 
 import { CPostActions } from './components/CPostActions';
+import { CPostBottom } from './components/CPostBottom';
 import { CPostHeader } from './components/CPostHeader';
 import { CPostImage } from './components/CPostImage';
 
@@ -19,6 +20,11 @@ export function CPostItem({ post }: PostItemProps) {
         commentCount={post.commentCount}
         favoriteCount={post.favoriteCount}
         reactionCount={post.reactionCount}
+      />
+      <CPostBottom
+        author={post.author}
+        commentCount={post.commentCount}
+        text={post.text}
       />
     </CBox>
   );

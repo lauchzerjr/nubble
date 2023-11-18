@@ -11,6 +11,8 @@ import { AppTabScreenProps } from 'src/routes/navigationType';
 
 import { CScreen, CPostItem } from '@components';
 
+import { HomeHeader } from './components/HomeHeader';
+
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
   const [postList, setPostList] = useState<Post[]>([]);
   useEffect(() => {
@@ -23,11 +25,13 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
 
   return (
     <CScreen style={$screen}>
+      {/* <HomeHeader /> */}
       <FlatList
         data={postList}
         keyExtractor={item => item.id}
         renderItem={renderItem}
         showsVerticalScrollIndicator={false}
+        ListHeaderComponent={<HomeHeader />}
       />
     </CScreen>
   );
