@@ -15,7 +15,6 @@ import {
 } from '@expo-google-fonts/raleway';
 import { ThemeProvider } from '@shopify/restyle';
 import * as SplashScreen from 'expo-splash-screen';
-import { StatusBar } from 'expo-status-bar';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import { Routes } from './src/routes/Routes';
