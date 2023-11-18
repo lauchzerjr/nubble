@@ -1,16 +1,27 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import { FlatList, ListRenderItemInfo } from 'react-native';
 
+import { Post, postService } from '@domain';
 import { AppTabScreenProps } from 'src/routes/navigationType';
 
-import { CButton, CScreen, CText } from '@components';
+import { CScreen, CPostItem } from '@components';
 
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
+  const [postList, setPostList] = useState<Post[]>([]);
+  useEffect(() => {
+    postService.getList().then(list => setPostList(list));
+  }, []);
+
+  function renderItem({ item }: ListRenderItemInfo<Post>) {
+    return <CPostItem post={item} />;
+  }
+
   return (
     <CScreen>
-      <CText preset="headingLarge">Home Screen</CText>
-      <CButton
-        title="Settings"
-        onPress={() => navigation.navigate('SettingsScreen')}
+      <FlatList
+        data={postList}
+        keyExtractor={item => item.id}
+        renderItem={renderItem}
       />
     </CScreen>
   );

@@ -8,3 +8,4 @@ export * from './CPasswordInput/CPasswordInput';
 export * from './CScreen/CScreen';
 export * from './CText/CText';
 export * from './CTextInput/CTextInput';
+export * from './CPostItem/CPostItem';
