@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import {
   FlatList,
   ListRenderItemInfo,
@@ -15,7 +15,7 @@ import { HomeEmpty } from './components/HomeEmpty';
 import { HomeHeader } from './components/HomeHeader';
 
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
-  const { error, loading, postList, refetch } = usePostList();
+  const { error, loading, postList, refetch, fetchNextPage } = usePostList();
 
   function renderItem({ item }: ListRenderItemInfo<Post>) {
     return <CPostItem post={item} />;
@@ -33,6 +33,8 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
         ListEmptyComponent={
           <HomeEmpty refetch={refetch} error={error} loading={loading} />
         }
+        onEndReached={fetchNextPage}
+        onEndReachedThreshold={0.1}
       />
     </CScreen>
   );
