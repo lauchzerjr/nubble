@@ -12,7 +12,7 @@ export function CPostImage({ imageURL }: CPostImageProps) {
       source={{ uri: imageURL }}
       style={{
         width: Dimensions.get('screen').width,
-        height: 400,
+        height: 300,
         marginHorizontal: -24,
       }}
     />
