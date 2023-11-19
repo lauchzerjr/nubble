@@ -6,7 +6,7 @@ import {
   ViewStyle,
 } from 'react-native';
 
-import { Post, postService } from '@domain';
+import { Post, usePostList } from '@domain';
 import { AppTabScreenProps } from 'src/routes/navigationType';
 
 import { CScreen, CPostItem } from '@components';
@@ -15,27 +15,7 @@ import { HomeEmpty } from './components/HomeEmpty';
 import { HomeHeader } from './components/HomeHeader';
 
 export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
-  const [postList, setPostList] = useState<Post[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<boolean | null>(null);
-
-  async function fetchData() {
-    try {
-      setError(null);
-      setLoading(true);
-      const list = await postService.getList();
-      setPostList(list);
-    } catch (er) {
-      console.log('ERROR: ', er);
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { error, loading, postList, refetch } = usePostList();
 
   function renderItem({ item }: ListRenderItemInfo<Post>) {
     return <CPostItem post={item} />;
@@ -51,7 +31,7 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
         contentContainerStyle={{ flex: postList.length === 0 ? 1 : undefined }}
         ListHeaderComponent={<HomeHeader />}
         ListEmptyComponent={
-          <HomeEmpty refetch={fetchData} error={error} loading={loading} />
+          <HomeEmpty refetch={refetch} error={error} loading={loading} />
         }
       />
     </CScreen>
