@@ -26,6 +26,7 @@ export function HomeScreen({ navigation }: AppTabScreenProps<'HomeScreen'>) {
       const list = await postService.getList();
       setPostList(list);
     } catch (er) {
+      console.log('ERROR: ', er);
       setError(true);
     } finally {
       setLoading(false);
